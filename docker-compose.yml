@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  jupyter:
+    image: mrmaksimize/geodocker:latest
+    ports: 
+      - "8888:8888"
+    volumes: 
+      - "./:/home/jovyan/work"
+    environment:
+      GRANT_SUDO: "yes"
+      JUPYTER_ENABLE_LAB: "yes"
+      RESTARTABLE: "yes"
+      PYTHONPATH: "/home/jovyan/work/src"
+    command: bash -c "pip install -r /home/jovyan/work/requirements-extra.txt && start.sh jupyter lab"
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+
+  streamlit:
+    image: mrmaksimize/geodocker:latest
+    ports: 
+      - "8501:8501"
+    volumes: 
+      - "./:/home/jovyan/work"
+    environment:
+      GRANT_SUDO: "yes"
+      JUPYTER_ENABLE_LAB: "yes"
+      RESTARTABLE: "yes"
+      PYTHONPATH: "/home/jovyan/work/src"
+    command: bash -c "pip install -r /home/jovyan/work/requirements-extra.txt && start.sh streamlit run ./work/src/streamlit/app.py"
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+
+
