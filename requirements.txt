@@ -31,6 +31,7 @@ osmnx
 pandas
 Pillow
 psutil==5.7.2
+psycopg2
 PyCRS
 pyct
 pygeos
@@ -46,6 +47,7 @@ Shapely
 six
 sklearn
 streamlit
+sqlalchemy
 tornado
 tqdm
 urllib3

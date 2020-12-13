@@ -6,6 +6,7 @@ USER root
 
 RUN apt-get update \
     && apt-get install software-properties-common -y \
+    && apt-get install postgresql -y \
     && apt-get install gdal-bin -y && apt-get install libgdal-dev -y \
     && apt-get install -y libproj-dev proj-data proj-bin libgeos-dev libspatialindex-dev  \
     && apt-get install -y osmctools \

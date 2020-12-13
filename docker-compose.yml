@@ -31,5 +31,23 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile
+  postgres:
+    image: 'postgres:latest'
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=geodocker_user
+      - POSTGRES_PASSWORD=geodocker_pass
+      - POSTGRES_DB=geodocker_pg
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
 
+  pgadmin:
+    image: 'dpage/pgadmin4:latest'
+    ports:
+        - "5433:5433"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=geodocker@isawesome.com
+      - PGADMIN_DEFAULT_PASSWORD=geodocker_pga_pass
+      - PGADMIN_LISTEN_PORT=5433
 
