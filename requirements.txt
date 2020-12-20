@@ -15,9 +15,6 @@ geopandas
 geopy
 geoviews
 #GOSTnets
-holoviews
-holoviz
-hvplot
 ipywidgets
 jsonschema
 jupyterlab
