@@ -11,7 +11,7 @@ services:
       JUPYTER_ENABLE_LAB: "yes"
       RESTARTABLE: "yes"
       PYTHONPATH: "/home/jovyan/work/src"
-    command: bash -c "pip install -r /home/jovyan/work/requirements-extra.txt && start.sh jupyter lab"
+    command: bash -c "pip install -r /home/jovyan/work/requirements-extra.txt && start.sh jupyter lab --LabApp.token=''"
     build: 
       context: ./
       dockerfile: Dockerfile
