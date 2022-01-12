@@ -1,14 +1,16 @@
-# Geo Prototyping
-This repo contains examples, tests and notebooks to test out how geo can work in Elucd;
-
 ## !!! Never For Production !!!
+This is meant to be a prototyping and development environment, and is not optimized or secured for production.  Please treat it as such.
+
+## Credit where credit is due
+This is heavily based on the [DataDriven Data Science Template](https://github.com/drivendata/cookiecutter-data-science) with a few modifications.  We wanted to add a few challenge specific packages and libraries, enable you to run Dask and Coiled, and put a bit of additional, healthy constraints to improve collaboration and reproducibility.
 
 ## What's included
-* JupyterLab environment 
+* JupyterLab environment with GDAL, Rasterio and other geospatial libraries that support it pre-installed.
 * Postgres database
+* Streamlit for interactive development
 * PG Admin
 
-## Get Started
+## Quick Start
 ### Bring up just jupyter
 `docker-compose up jupyter`
 
@@ -23,16 +25,14 @@ This repo contains examples, tests and notebooks to test out how geo can work in
 * To get into PgAdmin, the credentials are `geodocker@isawesome.com/geodocker_pga_pass`
 * Please see example in notebooks/db.ipynb for connecting to PG in python. 
 
+## How it fits together
+
+
 
 ### How it all fits together
 * Use jupyter to prototype your code
 * Use streamlit if needed (just for fun)
 * Use PgAdmin to interactively query your database and monitor performance
-
-
-
-
-
 
 ## Notebooks
 * Scratch: Really messy, do whatever notebook
